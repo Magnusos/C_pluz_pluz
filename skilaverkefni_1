@@ -1,0 +1,70 @@
+// Skilaverkefni_1.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+
+	// sextandakerfið er hex
+	// attundakerið er octal
+	//tviundakerfið er binary
+	int val;
+	int check = 0;
+
+	cout << "Talnakerfisbreytir \n 1 - Breyta i tviundakerfid \n 2 - Breyta i attundakerfid \n 3 - Breyta i sextandakerfid \n 0 - Heatta \n ---------------- - \n Veldu aðgerd : ";
+	cin >> val;
+	while (check == 0)
+	{
+		switch (val)
+		{
+
+		case 1:
+			int heild;
+			int bin;
+			/*bitset<sizeof(int)> toBin(bin);*/
+			
+			cout << "veldu tolu til a breyta i tviundakerfid: ";
+			cin >> bin;
+			while (bin != 0)
+			{
+				heild = bin % 2;
+				bin /= 2;
+				cout << heild;
+			}
+			cout << std::endl;
+			break;
+		case 2:
+			int octal;
+			cout << "veldu tolu til a breyta i attundakerfid: ";
+			cin >> octal;
+			cout << oct << octal << '\n';
+			break;
+		case 3:
+			int hx;
+			cout << "veldu tolu til a breyta i sextandakerfid: ";
+			cin >> hx;
+			cout << hex << hx << '\n';
+			break;
+		case 0:
+			return EXIT_SUCCESS;
+			break;
+		default:
+			cout << "Rangt val, reyndu aftur." << endl;
+			cout << "Veldu aðgerd :";
+			cin >> val;
+			break;
+		}
+	}
+
+
+
+	return 0;
+}
+
+
+
